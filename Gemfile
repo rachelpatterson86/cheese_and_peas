@@ -50,6 +50,8 @@ end
 group :production do
   # Postgres for Heroku 
   gem 'pg'
+  # heroku stuff...
+  gem 'rails_12factor'
 end
 
 ruby '2.1.5'
