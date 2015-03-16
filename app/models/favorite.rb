@@ -22,3 +22,4 @@ end
 # @user.favorites_count == 5 # true
 
 # The Stale Object/Stale Record Problem
+# One solution: User.reset_counters(@user.id, :favorites)
