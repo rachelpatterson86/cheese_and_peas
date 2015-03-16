@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # yummly wrapper
@@ -52,11 +51,10 @@ group :development, :test do
 end
 
 group :production do
-  # Postgres for Heroku 
+  # Postgres for Heroku
   gem 'pg'
   # heroku stuff...
   gem 'rails_12factor'
 end
 
 ruby '2.1.5'
-
