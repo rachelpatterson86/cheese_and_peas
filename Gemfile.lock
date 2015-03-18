@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/rachelpatterson86/yummly.git
+  revision: fa5913361d76d4125d730f9a698680813671d672
+  branch: more-api-calls
+  specs:
+    yummly (0.0.13)
+      faraday (>= 0.8.7)
+      json (~> 1.8.0)
+      rack (>= 1.4.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -174,10 +184,6 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    yummly (0.0.13)
-      faraday (>= 0.8.7)
-      json (~> 1.8.0)
-      rack (>= 1.4.5)
 
 PLATFORMS
   ruby
@@ -199,4 +205,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  yummly
+  yummly!

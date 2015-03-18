@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # yummly wrapper
-gem 'yummly'
+gem 'yummly', github: "rachelpatterson86/yummly", branch: "more-api-calls"
 # User auth
 gem 'devise'
 # Use SCSS for stylesheets

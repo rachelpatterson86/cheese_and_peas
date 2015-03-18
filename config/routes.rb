@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  root "home#index"
-  get 'users/:id' => 'users#index'
+  root 'home#search'
+  get '/recipes' => 'recipes#read'
+  get '/users/:id' => 'users#index'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

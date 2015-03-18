@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
-  def read(id) #@query.id
-    @recipe = Yummly.find(id)
+  def read #need @query.id
+    @recipe = Yummly.find(params[:rid])
   end
 
 end
