@@ -5,3 +5,32 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do |a|
+  AllowedAllergy.create({
+    allergy_name: Faker::Lorem.word,
+    yummly_id: Faker::Number.number(3)
+    })
+  end
+
+10.times do |d|
+  AllowedDiet.create({
+    diet_name: Faker::Lorem.word,
+    yummly_id: Faker::Number.number(3)
+    })
+  end
+
+10.times do |i|
+  ExcludedIngredient.create({
+    ingredient_name: Faker::Lorem.word,
+    yummly_id: Faker::Number.number(3)
+    })
+  end
+
+5.times do |u|
+  User.create({
+    username: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: "password"
+    })
+  end
