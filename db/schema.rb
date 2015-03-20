@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316201356) do
+ActiveRecord::Schema.define(version: 20150318230219) do
 
   create_table "allowed_allergies", force: :cascade do |t|
     t.integer  "yummly_id"
@@ -50,11 +50,12 @@ ActiveRecord::Schema.define(version: 20150316201356) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "excluded_ingredient_id"
-    t.integer  "allowed_allergy_id"
-    t.integer  "allowed_diet_id"
+    t.text     "excluded_ingredient_id"
+    t.text     "allowed_allergy_id"
+    t.text     "allowed_diet_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "user_id"
   end
 
   create_table "recipes", force: :cascade do |t|
