@@ -6,6 +6,8 @@ gem 'rails', '4.2.0'
 gem 'yummly', github: "rachelpatterson86/yummly", branch: "more-api-calls"
 # User auth
 gem 'devise'
+# dummy data
+gem 'faker'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
