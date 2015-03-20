@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#search'
   get '/recipes' => 'recipes#read'
   resources :users, only: :show do
-    resources :profile
+    resource :profile
   end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
