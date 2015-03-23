@@ -4,11 +4,11 @@ class ProfilesController < ApplicationController
   def show
     #@user = current_user
     @ingredients = ExcludedIngredient.where(ingredient_name: params[:q])
-    ingredient = @ingredients.pluck(:id).to_s
+    ingredient = @ingredients.pluck(:id)
     @diets = AllowedDiet.where(id: params[:diet_id])
-    diet = @diets.pluck(:id).to_s
+    diet = @diets.pluck(:id)
     @allergies = AllowedAllergy.where(id: params[:allergy_id])
-    allergy = @allergies.pluck(:id).to_s
+    allergy = @allergies.pluck(:id)
     @user.create_profile(excluded_ingredient_id: ingredient,
                          allowed_allergy_id: allergy,
                          allowed_diet_id: diet)
@@ -32,11 +32,6 @@ class ProfilesController < ApplicationController
   end
 
 private
-    # def profile_params
-    #   params.require(:profile).permit(:excluded_ingredient_id,
-    #                                   :allowed_allergy_id,
-    #                                   :allowed_diet_id)
-    # end
 
     def set_profile
       @user = current_user
