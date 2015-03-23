@@ -7,15 +7,15 @@ class Profile < ActiveRecord::Base
   serialize :allowed_diet_id
 
   def allowed_diets
-    allowed_diet_id.map { |x| AllowedDiet.find(x.to_i).search_value }
+    allowed_diet_id.map { |x| AllowedDiet.find(x).search_value }
   end
 
   def allowed_allergies
-    allowed_allergy_id.map { |x| AllowedAllergy.find(x.to_i).search_value }
+    allowed_allergy_id.map { |x| AllowedAllergy.find(x).search_value }
   end
 
   def excluded_ingredients
-    excluded_ingredient_id.map { |x| ExcludedIngredient.find(x.to_i).search_value }
+    excluded_ingredient_id.map { |x| ExcludedIngredient.find(x).search_value }
   end
 
   # def excluded_ingredients
