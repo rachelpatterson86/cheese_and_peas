@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_member!
+  before_action :authenticate_user!
 
-  def search(term,opts ={})
-    options = term.merge!(opts)
-    if params[:q]
-      @query = Yummly.search(options)
-    end
+  def show
   end
 
 end

@@ -1,0 +1,26 @@
+<div class="form-container">
+  <div class="form-container-inner">
+    <%= form_tag("/", method: "get", class:"form-container-inner") do %>
+    <div class="text-field-wrapper">
+      <%= text_field_tag(:q, params[:q], class: "text-field",
+      placeholder: "Search For Tasty Recipes") %>
+    </div>
+    <div class="submit-wrapper">
+      <%= submit_tag("Search") %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="recipe-search">
+  <% if @query %>
+    <ul id="search-results">
+      <% @query.each do |q| %>
+      <li><%= q.thumbnail %><%= q.total_time_in_seconds %>
+        <%= link_to("#{q.name}", recipes_path(:rid => q.id),
+                                              method: :get) %>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
+</div>

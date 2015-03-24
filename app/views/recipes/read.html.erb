@@ -1,0 +1,12 @@
+<h1>recipes</h1>
+
+<div >
+  <ul class="recipe-view">
+    <li><%= @recipe.name %>
+      <%= @recipe.ingredients %><%= @recipe.images.first.large_url %>
+      <%= @recipe.source.display_name %><%= @recipe.number_of_servings %>
+      <%= link_to("#{@recipe.source.display_name}",@recipe.source.recipe_url,
+                  method: :get) %>
+      </li>
+  </ul>
+</div>
