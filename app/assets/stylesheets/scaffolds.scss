@@ -6,24 +6,61 @@ body {
   line-height: 18px;
 }
 
+header {
+  margin: 0;
+  display: block;
+  background-color: #fff;
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
+.session {
+  float: right;
+  padding-right: 10px;
+  color: #A9A9A9;
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #666;
+    text-decoration: none;
+    background-color: transparent;
   }
 }
 
+a {
+  color: #A9A9A9;
+  &:hover {
+    color: #666;
+    text-decoration: none;
+    background-color: #fff;
+  }
+}
+
+.form-container-inner {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.text-field-wrapper {
+  height: 100%;
+}
+.text-field {
+  height: 34px;
+  width: 180px;
+  background: #f9f9f8;
+  box-shadow:inset 0 2px 2px #E9E9E8,0 0 0 1000px #FFF inset;
+  border-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border: 1px solid #D9D5D5;
+}
+
+#q {
+  padding: 3px;
+}
 div {
   &.field, &.actions {
     margin-bottom: 10px;

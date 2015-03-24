@@ -5,15 +5,14 @@
       <%= text_field_tag(:q, params[:q], class: "text-field",
       placeholder: "Search For Tasty Recipes") %>
     </div>
-    <div class="submit-wrapper">
-      <%= submit_tag("Search") %>
-    </div>
+      <%= submit_tag "Search", class: "btn btn-info" %>
     <% end %>
   </div>
 </div>
 
-<div class="recipe-search">
+
   <% if @query %>
+  <div class="recipe-search">
     <ul id="search-results">
       <% @query.each do |q| %>
       <li><%= q.thumbnail %><%= q.total_time_in_seconds %>
@@ -22,5 +21,5 @@
         </li>
       <% end %>
     </ul>
-    <% end %>
 </div>
+<% end %>
