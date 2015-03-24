@@ -1,0 +1,30 @@
+<h1>recipes</h1>
+
+<div >
+  <ul class="recipe-view">
+    <li><%= @yummly.name %>
+      <%= @yummly.ingredients %><%= @yummly.images.first.large_url %>
+      <%= @yummly.source.display_name %><%= @yummly.number_of_servings %>
+      <%= link_to("#{@yummly.source.display_name}",@yummly.source.recipe_url,
+                  method: :get) %>
+      </li>
+  </ul>
+</div>
+
+<% if current_user %>
+  <%= form_for Comment.new, remote: true do |f| %>
+    <%= f.hidden_field(:recipe_id, :value => @recipe.id) %>
+    <p>
+      <%= f.label :comment, "New comment" %><br/>
+      <%= f.text_area :comment %>
+    </p>
+  <% end %>
+<% end %>
+
+<% if @recipe %>
+  <h2>Comments</h2>
+
+  <div id="comments">
+    <%= render :partial => @recipe.comments %>
+  </div>
+<% end %>

@@ -17,8 +17,7 @@
     <ul id="search-results">
       <% @query.each do |q| %>
       <li><%= q.thumbnail %><%= q.total_time_in_seconds %>
-        <%= link_to("#{q.name}", recipes_path(:rid => q.id),
-                                              method: :get) %>
+        <%= link_to("#{q.name}", recipe_path(q.id)) %>
         </li>
       <% end %>
     </ul>

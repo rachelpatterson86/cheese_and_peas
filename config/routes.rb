@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   root 'home#search'
-  get '/recipes' => 'recipes#read'
+  resources :recipes, only: [:show, :create]
+  resources :comments, only: [:create]
+  
   resources :users, only: :show do
     resource :profile
   end
