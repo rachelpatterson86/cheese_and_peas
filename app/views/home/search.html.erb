@@ -5,13 +5,12 @@
       <%= text_field_tag(:q, params[:q], class: "text-field",
       placeholder: "Search For Tasty Recipes") %>
     </div>
-    <div class="submit-wrapper">
-      <%= submit_tag("Search") %>
-    </div>
+      <%= submit_tag "Search", class: "btn btn-info" %>
     <% end %>
   </div>
 </div>
 
+<<<<<<< HEAD
 <div class="recipe-search">
   <% if @query %>
     <ul id="search-results">
@@ -21,5 +20,23 @@
         </li>
       <% end %>
     </ul>
+=======
+
+<% if @query %>
+  <div class="search-container">
+    <% @query.each_slice(4) do |query| %>
+    <div class="row">
+      <% query.each do |q| %>
+      <div class="col-xs-3">
+        <div class="center-container">
+          <img src="<%= q.thumbnail %>"/>
+          <span><%= link_to("#{q.name}", recipes_path(:rid => q.id), class: "name",
+                                                method: :get) %> </span>
+        </div>
+      </div>
+>>>>>>> 385fe6007bbdd32dc6184a2be627791dc52c8b6e
     <% end %>
-</div>
+    </div>
+  <% end %>
+  </div>
+<% end %>
