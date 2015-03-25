@@ -1,0 +1,40 @@
+
+.search-container {
+  margin: 50px;
+}
+
+.name {
+  vertical-align: middle;
+  display: table-cell;
+  position: relative;
+  top: 45px;
+  text-align: center;
+  color: #333333;
+  &:hover {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+img {
+  position: relative;
+  top: 30px;
+
+}
+
+.center-container {
+  display: inline-block;
+  position: relative;
+  left: 29px;
+  height: 200px;
+  width: 160px;
+  border: 2px solid rgba(89, 70, 70, 0.22);
+  text-align: center;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

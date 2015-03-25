@@ -11,15 +11,20 @@
 </div>
 
 
-  <% if @query %>
-  <div class="recipe-search">
-    <ul id="search-results">
-      <% @query.each do |q| %>
-      <li><%= q.thumbnail %><%= q.total_time_in_seconds %>
-        <%= link_to("#{q.name}", recipes_path(:rid => q.id),
-                                              method: :get) %>
-        </li>
-      <% end %>
-    </ul>
-</div>
+<% if @query %>
+  <div class="search-container">
+    <% @query.each_slice(4) do |query| %>
+    <div class="row">
+      <% query.each do |q| %>
+      <div class="col-xs-3">
+        <div class="center-container">
+          <img src="<%= q.thumbnail %>"/>
+          <span><%= link_to("#{q.name}", recipes_path(:rid => q.id), class: "name",
+                                                method: :get) %> </span>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
 <% end %>
