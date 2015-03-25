@@ -1,16 +1,36 @@
+
 <%= form_tag("/users/#{current_user.id}/profile", method: "get") do %>
+  <%if current_user.profile.nil?%>
+    <% @allergies.each do |allergy| %>
+      <%= check_box_tag 'allergy_id[]', allergy.id -%>
+      <%= h allergy.allergy_name -%>
+    <% end %> </br>
 
-<% @allergies.each do |allergy| %>
-  <%= check_box_tag 'allergy_id[]', allergy.id -%>
-  <%= h allergy.allergy_name -%>
-<% end %> </br>
+    <% @diets.each do |diet| %>
+    <%= check_box_tag 'diet_id[]', diet.id -%>
+    <%= h diet.diet_name -%>
+    <% end %> </br>
 
-<% @diets.each do |diet| %>
-<%= check_box_tag 'diet_id[]', diet.id -%>
-<%= h diet.diet_name -%>
-<% end %> </br>
+    <%= label_tag(:q, "Ingredients to Exclude") %>
+    <%= text_field_tag(:q) %>
 
-<%= label_tag(:q, "Ingredients to Exclude") %>
-<%= text_field_tag(:q) %>
-<%= submit_tag("Create Profile") %>
+  <% else %>
+
+    <% @allergies.each do |allergy| %>
+      <%= check_box_tag 'allergy_id[]', allergy.id -%>
+      <%= h allergy.allergy_name -%>
+    <% end %> </br>
+
+    <% @diets.each do |diet| %>
+    <%= check_box_tag 'diet_id[]', diet.id -%>
+    <%= h diet.diet_name -%>
+    <% end %> </br>
+
+    <%= label_tag(:q, "Ingredients to Exclude") %>
+    <%= text_field_tag(:q) %>
+
+  <% end %>
+
+    <%= submit_tag("Create Profile") %>
+
 <% end %>
