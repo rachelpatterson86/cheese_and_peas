@@ -10,18 +10,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-<div class="recipe-search">
-  <% if @query %>
-    <ul id="search-results">
-      <% @query.each do |q| %>
-      <li><%= q.thumbnail %><%= q.total_time_in_seconds %>
-        <%= link_to("#{q.name}", recipe_path(q.id)) %>
-        </li>
-      <% end %>
-    </ul>
-=======
-
 <% if @query %>
   <div class="search-container">
     <% @query.each_slice(4) do |query| %>
@@ -34,7 +22,6 @@
                                                 method: :get) %> </span>
         </div>
       </div>
->>>>>>> 385fe6007bbdd32dc6184a2be627791dc52c8b6e
     <% end %>
     </div>
   <% end %>
