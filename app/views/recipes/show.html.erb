@@ -1,14 +1,40 @@
-<h1>recipes</h1>
 
-<div >
-  <ul class="recipe-view">
-    <li><%= @yummly.name %>
-      <%= @yummly.ingredients %><%= @yummly.images.first.large_url %>
-      <%= @yummly.source.display_name %><%= @yummly.number_of_servings %>
-      <%= link_to("#{@yummly.source.display_name}",@yummly.source.recipe_url,
-                  method: :get) %>
-      </li>
-  </ul>
+<div class="recipe-view">
+  <div class="title">
+    <h2><%= @yummly.name %> </h2>
+  </div>
+  <div class="source-name">
+    <p><%= link_to("#{@yummly.source.display_name}",
+                   @yummly.source.recipe_url,
+                   class: "name-r", method: :get) %></p>
+  </div>
+
+<div class="recipe-details">
+  <div class="recipe-img">
+    <img src="<%= @yummly.images.first.large_url %>"/>
+  </div>
+  <div class="time">
+    <h3> Time: <%= @yummly.total_time %></h3>
+  </div>
+  <div class="servings">
+    <h3> Serves: <%= @yummly.number_of_servings %></h3>
+  </div>
+  <div class="ingredient">
+    <h3> Ingredients: </h3>
+    <div class="list">
+      <ul class="list-unstyled"><% @yummly.ingredients.each do |i| %>
+          <li class = "size"><%= i %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+  <div class="buttons">
+    <%= button_to("View Recipe",@yummly.source.recipe_url, class: "btn btn-default",
+                method: :get) %>
+    <%= button_to("Back",:back, class: "btn btn-default",
+                method: :get) %>
+  </div>
+</div>
 </div>
 
 <% if current_user %>
@@ -17,15 +43,13 @@
     <p>
       <%= f.label :comment, "New comment" %><br/>
       <%= f.text_area :comment %>
-
-      <%= f.submit %>
+      <%= f.submit class: "btn btn-default" %>
     </p>
   <% end %>
 <% end %>
 
 <% if @recipe %>
   <h2>Comments</h2>
-
   <div id="comments">
     <%= render :partial => @recipe.comments %>
   </div>

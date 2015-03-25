@@ -18,7 +18,7 @@
       <div class="col-xs-3">
         <div class="center-container">
           <img src="<%= q.thumbnail %>"/>
-          <span><%= link_to("#{q.name}", recipes_path(:rid => q.id), class: "name",
+          <span><%= link_to("#{q.name}", recipe_path(q.id), class: "name",
                                                 method: :get) %> </span>
         </div>
       </div>
