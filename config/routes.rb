@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#search'
   resources :recipes, only: [:show, :create]
   resources :comments, only: [:create]
-  
+  resources :favorites, only: [:create]
   resources :users, only: :show do
     resource :profile
   end

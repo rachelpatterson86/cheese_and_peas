@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     #redirect_to recipe_path(@recipe)
     @comment = @recipe.comments.create(:comment => params[:comment][:comment])
     respond_to do |format|
-      format.html { redirect_to [@recipe] } #recipe_path(id: @recipe.yummly_id)
+      format.html { redirect_to recipe_path(id: @recipe.yummly_id) }
       format.js { render :create }
     end
   end

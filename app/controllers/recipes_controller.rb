@@ -5,5 +5,4 @@ class RecipesController < ApplicationController
     @yummly = Yummly.find(params[:id])
   end
 
-  
 end

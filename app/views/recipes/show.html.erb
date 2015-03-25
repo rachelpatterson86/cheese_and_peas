@@ -30,10 +30,16 @@
   </div>
   <div class="buttons">
     <%= button_to("View Recipe",@yummly.source.recipe_url, class: "btn btn-default",
-                method: :get) %>
+                  method: :get) %>
     <%= button_to("Back",:back, class: "btn btn-default",
-                method: :get) %>
-  </div>
+                  method: :get) %>
+    <div class="stuff">
+    <span class="glyphicon glyphicon-star"></span>
+
+    <%= link_to("Favorite",favorites_path(:rid => @yummly.id),remote: true,
+                class: "source", method: :post) %>
+    </div>
+</div>
 </div>
 </div>
 

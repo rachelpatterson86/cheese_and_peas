@@ -45,4 +45,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.source {
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  &:hover {
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+
+.stuff {
+  height: 34px;
+  width: 50px;
+  position: absolute;
+  margin-top: 10px;
 }
