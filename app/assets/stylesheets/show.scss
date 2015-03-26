@@ -54,7 +54,8 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 16px;
+  top: 18px;
+  left: 92px;
   &:hover {
     color: #333333;
     font-weight: bold;
@@ -65,7 +66,7 @@
 
 .stuff {
   height: 34px;
-  width: 50px;
+  width: 122px;
   position: absolute;
   margin-top: 10px;
 }
@@ -91,4 +92,16 @@
 textarea[id="comment_comment"] {
   width: 300px;
   height: 100px;
+}
+
+input[value="View Recipe"] {
+  top: 0px;
+  position: absolute;
+  left: 40px;
+}
+
+input[value="Back"] {
+  top: 0px;
+  position: absolute;
+  left: 162px;
 }
