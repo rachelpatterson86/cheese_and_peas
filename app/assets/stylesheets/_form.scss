@@ -2,7 +2,7 @@
   margin-bottom: 30px;
 }
 
-input[type="text"] {
+input[id="q"] {
   height: 34px;
   width: 600px;
   display: flex;
@@ -16,7 +16,7 @@ label {
   margin: 20px 0 5px 188px;
 }
 
-input[type="submit"] {
+input[value="Create Profile"] {
   margin: auto;
   margin-top: 50px;
   display: flex;
