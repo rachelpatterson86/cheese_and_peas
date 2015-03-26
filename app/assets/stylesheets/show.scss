@@ -69,3 +69,26 @@
   position: absolute;
   margin-top: 10px;
 }
+
+.comment-container {
+  display: inline-block;
+  margin: auto;
+}
+.comment-label {
+  display: inline-block;
+  margin: 20px
+}
+.text-area {
+  margin-left: 20px;
+}
+.comment {
+  margin: 0;
+}
+
+.new_comment {
+  margin: auto;
+}
+textarea[id="comment_comment"] {
+  width: 300px;
+  height: 100px;
+}
