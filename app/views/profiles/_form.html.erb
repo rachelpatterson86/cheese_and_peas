@@ -1,16 +1,54 @@
-<%= form_tag("/users/#{current_user.id}/profile", method: "get") do %>
+<% if current_user.profile.nil?%>
 
-<% @allergies.each do |allergy| %>
-  <%= check_box_tag 'allergy_id[]', allergy.id -%>
-  <%= h allergy.allergy_name -%>
-<% end %> </br>
+  <%= form_tag("/users/#{current_user.id}/profile", method: "get") do %>
 
-<% @diets.each do |diet| %>
-<%= check_box_tag 'diet_id[]', diet.id -%>
-<%= h diet.diet_name -%>
-<% end %> </br>
+  <p class = "list">Recipe Types for Allergies:</p>
+  <div class="profile-border">
+    <% @allergies.each do |allergy| %>
+      <%= check_box_tag 'allergy_id[]', allergy.id -%>
+      <%= h allergy.allergy_name -%>
+    <% end %> </br>
+  </div>
+  <p class = "list">Diet Preference:</p>
+  <div class="profile-border">
+    <% @diets.each do |diet| %>
+    <%= check_box_tag 'diet_id[]', diet.id -%>
+    <%= h diet.diet_name -%>
+    <% end %>
+  </div>
+    </br>
 
-<%= label_tag(:q, "Ingredients to Exclude") %>
-<%= text_field_tag(:q) %>
-<%= submit_tag("Create Profile") %>
+    <%= label_tag(:q, "Ingredients to Exclude:") %>
+    <%= text_field_tag(:q) %>
+
+    <%= submit_tag("Create Profile",class: "btn btn-default") %>
+
+    <% end %>
+
+<% else %>
+
+<%= form_for([@user, @profile]) do %>
+
+  <p class = "list">Recipe Types for Allergies:</p>
+  <div class="profile-border">
+      <% @allergies.each do |allergy| %>
+      <%= check_box_tag 'allergy_id[]', allergy.id -%>
+      <%= h allergy.allergy_name -%>
+    <% end %>
+
+  </div>
+</br>
+    <p class = "list">Diet Preference:</p>
+    <div class="profile-border">
+    <% @diets.each do |diet| %>
+    <%= check_box_tag 'diet_id[]', diet.id -%>
+    <%= h diet.diet_name -%>
+    <% end %>
+  </div>
+</br>
+    <%= label_tag(:q, "Ingredients to Exclude:") %>
+    <%= text_field_tag(:q) %>
+
+    <%= submit_tag("Edit Profile", class: "btn btn-default") %>
+  <% end %>
 <% end %>

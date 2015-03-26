@@ -1,0 +1,39 @@
+.welcome {
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  height: 34px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-color: #D5D9D9;
+}
+
+label {
+  margin: 20px 0 5px 188px;
+}
+
+input[type="submit"] {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.list {
+  font-weight: bold;
+  margin: 20px 0 5px 188px;
+
+}
+
+.profile-border {
+  border-bottom: 1px solid #333333;
+  max-width: 600px;
+  margin: auto;
+}
