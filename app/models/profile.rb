@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
-  validates :user, uniqueness: true
+  #validates :user, uniqueness: true
 
   serialize :excluded_ingredient_id
   serialize :allowed_allergy_id
@@ -18,17 +18,18 @@ class Profile < ActiveRecord::Base
     excluded_ingredient_id.map { |x| ExcludedIngredient.find(x).search_value }
   end
 
-  def allowed_diet
-    allowed_diet_id.map { |x| AllowedDiet.find(x) }
-  end
 
-  def allowed_allergy
-    allowed_allergy_id.map { |x| AllowedAllergy.find(x) }
-  end
-
-  def excluded_ingredient
-    excluded_ingredient_id.map { |x| ExcludedIngredient.find(x) }
-  end
+  # def allowed_diet
+  #   allowed_diet_id.map { |x| AllowedDiet.find(x) }
+  # end
+  #
+  # def allowed_allergy
+  #   allowed_allergy_id.map { |x| AllowedAllergy.find(x) }
+  # end
+  #
+  # def excluded_ingredient
+  #   excluded_ingredient_id.map { |x| ExcludedIngredient.find(x) }
+  # end
 
 
   # def excluded_ingredients

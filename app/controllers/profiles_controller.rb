@@ -43,8 +43,8 @@ class ProfilesController < ApplicationController
     @user.create_profile(excluded_ingredient_id: ingredient,
                          allowed_allergy_id: allergy,
                          allowed_diet_id: diet)
-    #Profile.find_by(user_id: nil)
-    redirect_to "home/search"
+    Profile.where(user_id: nil).destroy_all
+    redirect_to "/"
   end
 
 private
