@@ -28,6 +28,8 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @allergies= AllowedAllergy.all
+    @diets = AllowedDiet.all
     render :edit
   end
 

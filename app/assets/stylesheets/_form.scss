@@ -26,6 +26,17 @@ input[value="Create Profile"] {
   padding-right: 0;
 }
 
+
+input[value="Edit Profile"] {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .list {
   font-weight: bold;
   margin: 20px 0 5px 188px;
