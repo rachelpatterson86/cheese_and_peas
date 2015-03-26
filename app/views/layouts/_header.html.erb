@@ -7,12 +7,12 @@
           <% if current_user.profile %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete,
                 class: 'session'%>
-            <%= link_to "Edit Profile", edit_user_profile_path(current_user.profile),
+            <%= link_to "Edit Profile", edit_user_profile_path(current_user.id),
                 method: :get,class: 'session'%>
           <% else %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete,
                 class: 'session'%>
-            <%= link_to "Create Profile", new_user_profile(current_user.profile),
+            <%= link_to "Create Profile", new_user_profile_path(current_user.id),
                 method: :get,class: 'session'%>
           <% end %>
         <% else %>

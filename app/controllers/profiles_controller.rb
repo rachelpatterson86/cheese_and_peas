@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     @user.create_profile(excluded_ingredient_id: ingredient,
                          allowed_allergy_id: allergy,
                          allowed_diet_id: diet)
-
+    redirect_to "/"
   end
 
   def new
@@ -30,7 +30,21 @@ class ProfilesController < ApplicationController
   def edit
     @allergies= AllowedAllergy.all
     @diets = AllowedDiet.all
-    render :edit
+      render :edit
+  end
+
+  def update
+    @ingredients = ExcludedIngredient.where(ingredient_name: params[:q])
+    ingredient = @ingredients.pluck(:id)
+    @diets = AllowedDiet.where(id: params[:diet_id])
+    diet = @diets.pluck(:id)
+    @allergies = AllowedAllergy.where(id: params[:allergy_id])
+    allergy = @allergies.pluck(:id)
+    @user.create_profile(excluded_ingredient_id: ingredient,
+                         allowed_allergy_id: allergy,
+                         allowed_diet_id: diet)
+    #Profile.find_by(user_id: nil)
+    redirect_to "home/search"
   end
 
 private
